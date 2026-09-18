@@ -1,59 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>GreenScape Solutions</title>
-    <link rel="stylesheet" href="css/home.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenScape Solutions | Professional Property Maintenance</title>
+    <link rel="stylesheet" href="css/Style.css">
 </head>
-
 <body>
 
     <header>
-        <h1>GreenScape Solutions</h1>
-        <p>Reliable Property Maintenance in Durban</p>
+        <div class="header-content">
+            <h1>GreenScape Solutions</h1>
+            <p>Reliable Property Maintenance in Durban</p>
+        </div>
 
-        <nav>
-        <a href="home.html">Home</a>
-        <a href="aboutus.html">About</a>
-        <a href="service.html">Services</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-<img src="images/grass cleaning.png" alt="Greenscape Solutions property maintenance">
+        <nav aria-label="Main Navigation">
+            <a href="home.html" aria-current="page">Home</a>
+            <a href="aboutus.html">About</a>
+            <a href="service.html">Services</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </nav>
     </header>
+
+    <figure class="hero-figure">
+        <img src="images/grass cleaning.png" alt="Greenscape Solutions team performing professional grass cutting and property maintenance in Durban">
+        <figcaption>Professional property upkeep across the Durban region.</figcaption>
+    </figure>
 
     <main>
 
-        <section>
+        <section id="about">
             <h2>About Us</h2>
-
             <p>
                 GreenScape Solutions provides reliable and affordable
-                property maintenance services for homes and businesses.
+                property maintenance services for residential and commercial spaces.
             </p>
         </section>
 
-        <section>
+        <section id="services">
             <h2>Our Services</h2>
+            
+            <div class="services-grid">
+                <article class="service-card">
+                    <h3>Grass Cutting</h3>
+                    <p>Regular lawn maintenance to keep properties clean, manicured, and inviting year-round.</p>
+                </article>
 
-            <h3>Grass Cutting</h3>
-            <p>
-                Regular lawn maintenance to keep properties clean and inviting.
-            </p>
+                <article class="service-card">
+                    <h3>Roof Washing</h3>
+                    <p>Water-conscious roof cleaning solutions designed to safely remove buildup without property damage.</p>
+                </article>
 
-            <h3>Roof Washing</h3>
-            <p>
-                Water-conscious roof cleaning for residential and commercial properties.
-            </p>
-
-            <h3>Property Maintenance</h3>
-            <p>
-                Scheduled maintenance to help property owners keep their
-                spaces well maintained.
-            </p>
+                <article class="service-card">
+                    <h3>Property Maintenance</h3>
+                    <p>Scheduled upkeep packages to help property owners keep their spaces immaculate.</p>
+                </article>
+            </div>
         </section>
 
-        <section>
+        <section id="mission">
             <h2>Our Mission</h2>
-
             <p>
                 To transform the way urban South Africans maintain their
                 properties by delivering consistent, high-quality and
@@ -61,9 +68,8 @@
             </p>
         </section>
 
-        <section>
+        <section id="values">
             <h2>Our Values</h2>
-
             <ul>
                 <li>Reliability</li>
                 <li>Sustainability</li>
@@ -72,17 +78,18 @@
             </ul>
         </section>
 
-        <section>
+        <section id="contact">
             <h2>Contact Us</h2>
-
-            <p>Phone: 031 811 3071</p>
-            <p>Email: info@greenscape.co.za</p>
+            <address>
+                <p>Phone: <a href="tel:0318113071">031 811 3071</a></p>
+                <p>Email: <a href="mailto:info@greenscape.co.za">info@greenscape.co.za</a></p>
+            </address>
         </section>
 
     </main>
 
     <footer>
-        <p>© 2026 GreenScape Solutions</p>
+        <p>&copy; 2026 GreenScape Solutions. All rights reserved.</p>
     </footer>
 
 </body>

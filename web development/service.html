@@ -1,205 +1,141 @@
-
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Services - GreenScape Solutions</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenScape Solutions | Services & Pricing</title>
+    <link rel="stylesheet" href="css/Style.css">
 </head>
-
 <body>
 
     <header>
-        <h1>GreenScape Solutions</h1>
-        <p>Reliable Property Maintenance in Durban</p>
-
-        <nav>
+        <div class="header-content">
+            <h1>GreenScape Solutions</h1>
+            <p>Reliable Property Maintenance in Durban</p>
+        </div>
+        <nav aria-label="Main Navigation">
             <a href="home.html">Home</a>
             <a href="aboutus.html">About</a>
-            <a href="service.html">Services</a>
+            <a href="service.html" aria-current="page">Services</a>
+            <a href="gallery.html">Gallery</a>
             <a href="contact.html">Contact</a>
         </nav>
     </header>
 
     <main>
 
-        <h2>Our Services</h2>
+        <section class="services-overview">
+            <h2>Our Services</h2>
 
-        <section>
-            <h3>Grass Cutting</h3>
+            <div class="services-grid">
+                <article class="service-card">
+                    <h3>Grass Cutting</h3>
+                    <p>Regular grass cutting and basic lawn maintenance for homes and businesses.</p>
+                    <p class="pricing-note">Pricing is based on the approximate size of the lawn and work required.</p>
+                </article>
 
-            <p>
-                Regular grass cutting and basic lawn maintenance
-                for homes and businesses.
-            </p>
+                <article class="service-card">
+                    <h3>Roof Washing</h3>
+                    <p>Roof cleaning designed to remove dirt, algae, and general buildup from residential and commercial roofs.</p>
+                    <p class="pricing-note">Pricing depends on approximate roof size, accessibility, and condition.</p>
+                </article>
 
-            <p>
-                Pricing is based on the approximate size of the
-                lawn and the amount of work required.
-            </p>
+                <article class="service-card">
+                    <h3>Scheduled Property Maintenance</h3>
+                    <p>Arrange regular upkeep instead of requesting individual services when work is needed.</p>
+                    <p class="pricing-note">Available weekly, every two weeks, or monthly.</p>
+                </article>
+            </div>
         </section>
 
-        <section>
-            <h3>Roof Washing</h3>
-
+        <section class="pricing-section">
+            <h2>Basic Pricing Guide</h2>
             <p>
-                Roof cleaning designed to remove dirt, algae and
-                general buildup from residential and commercial roofs.
+                The following is an example pricing model. A final quote
+                may change after the property has been assessed.
             </p>
 
-            <p>
-                Pricing depends on the approximate roof size,
-                accessibility and condition of the roof.
-            </p>
+            <div class="table-container">
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Starting Price</th>
+                            <th>Pricing Method</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Grass Cutting</td>
+                            <td>R150</td>
+                            <td>Base fee + lawn size</td>
+                        </tr>
+                        <tr>
+                            <td>Roof Washing</td>
+                            <td>R500</td>
+                            <td>Base fee + roof size</td>
+                        </tr>
+                        <tr>
+                            <td>Scheduled Maintenance</td>
+                            <td>Contact us</td>
+                            <td>Based on required services</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pricing-logic">
+                <p>Our basic pricing model follows this structure:</p>
+                <p class="formula-box">
+                    <strong>Total Price = Base Fee + Size-Based Charge</strong>
+                </p>
+                <p>
+                    The size-based charge accounts for additional time and resources required for larger properties.
+                </p>
+            </div>
         </section>
 
-        <section>
-            <h3>Scheduled Property Maintenance</h3>
+        <section class="estimate-section">
+            <h2>Request a Price Estimate</h2>
 
-            <p>
-                Customers can arrange regular maintenance instead
-                of requesting individual services whenever work is needed.
-            </p>
+            <form class="estimate-form">
+                <fieldset>
+                    <legend>Estimate Details</legend>
 
-            <p>
-                Scheduled maintenance can be arranged weekly,
-                every two weeks or monthly.
-            </p>
+                    <div class="form-group">
+                        <label for="service-select">Choose a service:</label>
+                        <select id="service-select" name="service">
+                            <option value="grass">Grass Cutting</option>
+                            <option value="roof">Roof Washing</option>
+                            <option value="scheduled">Scheduled Maintenance</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="size">Approximate property size in square metres:</label>
+                        <input type="number" id="size" name="size" min="1" placeholder="e.g. 250">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Your name:</label>
+                        <input type="text" id="name" name="name" placeholder="Full name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone number:</label>
+                        <input type="tel" id="phone" name="phone" placeholder="031 XXX XXXX">
+                    </div>
+
+                    <button type="submit" class="submit-btn">Request Estimate</button>
+                </fieldset>
+            </form>
         </section>
-
-
-        <h2>Basic Pricing Guide</h2>
-
-        <p>
-            The following is an example pricing model. A final quote
-            may change after the property has been assessed.
-        </p>
-
-        <table>
-
-            <tr>
-                <th>Service</th>
-                <th>Starting Price</th>
-                <th>Pricing Method</th>
-            </tr>
-
-            <tr>
-                <td>Grass Cutting</td>
-                <td>R150</td>
-                <td>Base fee + lawn size</td>
-            </tr>
-
-            <tr>
-                <td>Roof Washing</td>
-                <td>R500</td>
-                <td>Base fee + roof size</td>
-            </tr>
-
-            <tr>
-                <td>Scheduled Maintenance</td>
-                <td>Contact us</td>
-                <td>Based on required services</td>
-            </tr>
-
-        </table>
-
-
-        <h2>Request a Price Estimate</h2>
-
-        <form>
-
-            <label for="service">Choose a service:</label>
-            <br>
-
-            <select id="service" name="service">
-
-                <option value="grass">
-                    Grass Cutting
-                </option>
-
-                <option value="roof">
-                    Roof Washing
-                </option>
-
-            </select>
-
-            <br><br>
-
-            <label for="size">
-                Approximate property size in square metres:
-            </label>
-            <br>
-
-            <input
-                type="number"
-                id="size"
-                name="size"
-                min="1"
-            >
-
-            <br><br>
-
-            <label for="name">
-                Your name:
-            </label>
-            <br>
-
-            <input
-                type="text"
-                id="name"
-                name="name"
-            >
-
-            <br><br>
-
-            <label for="phone">
-                Phone number:
-            </label>
-            <br>
-
-            <input
-                type="tel"
-                id="phone"
-                name="phone"
-            >
-
-            <br><br>
-
-            <button type="submit">
-                Request Estimate
-            </button>
-
-        </form>
-
-        <h2>How Pricing Works</h2>
-
-        <p>
-            Our basic pricing model can be thought of as:
-        </p>
-
-        <p>
-            <strong>
-                Total Price = Base Fee + Size-Based Charge
-            </strong>
-        </p>
-
-        <p>
-            The size-based charge helps account for the additional
-            time and resources required to maintain larger properties.
-        </p>
-
-        <p>
-            This form currently collects information only.
-            An automatic price calculator can be added later.
-        </p>
 
     </main>
 
     <footer>
-        <p>© 2026 GreenScape Solutions</p>
+        <p>&copy; 2026 GreenScape Solutions. All rights reserved.</p>
     </footer>
 
 </body>
-
 </html>
-```

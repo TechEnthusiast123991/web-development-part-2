@@ -1,0 +1,393 @@
+/* --- 1. Root Variables & Tiered Green Palette --- */
+:root {
+    --canopy-dark: #143628;     /* Deepest green for primary header */
+    --foliha-mid: #1b4332;      /* Rich structural green */
+    --accent-vibrant: #2d6a4f;  /* Interactive highlights & borders */
+    --lawn-fresh: #d8f3dc;      /* Soft grass highlight tone */
+    --mint-wash: #f0f7f1;       /* Light tint for alternating panels */
+    
+    --card-bg: #ffffff;
+    --text-main: #2b3a2d;
+    --text-muted: #556b56;
+    --border-color: #c7dec8;
+    --radius: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #f7f9f7;
+    color: var(--text-main);
+    line-height: 1.6;
+    padding: 1rem 1rem 4rem 1rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* --- 2. Header & Navigation (Shared Across All Pages) --- */
+header {
+    background-color: var(--canopy-dark);
+    color: #ffffff;
+    padding: 2.5rem 2rem;
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    box-shadow: 0 10px 25px rgba(20, 54, 40, 0.15);
+    border-top: 4px solid var(--lawn-fresh);
+}
+
+.header-content h1 {
+    font-size: 2.3rem;
+    letter-spacing: -0.5px;
+}
+
+.header-content p {
+    color: var(--lawn-fresh);
+    font-size: 1.1rem;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+}
+
+nav a:hover, nav a[aria-current="page"] {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* --- 3. Hero Figure (Home Page Only) --- */
+.hero-figure {
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.hero-figure img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    border: 3px solid #ffffff;
+}
+
+.hero-figure figcaption {
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* --- 4. Main Sections & Tiered Background Shading --- */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+section {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+/* Alternate section tones for visual rhythm across all pages */
+section#services, .about-story, .pricing-section, .gallery-section {
+    background-color: var(--mint-wash);
+    border-color: #b7e4c7;
+}
+
+section#values {
+    background-color: var(--lawn-fresh);
+    border-color: #a3d9b1;
+}
+
+section#values h2 {
+    color: var(--canopy-dark);
+}
+
+section h2, main > h2 {
+    color: var(--foliha-mid);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+section h2::after, main > h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 45px;
+    height: 3px;
+    background-color: var(--accent-vibrant);
+    border-radius: 2px;
+}
+
+/* --- 5. Grid Layouts (Services, Approach & Gallery Cards) --- */
+.services-grid, .approach-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.service-card, .approach-card {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    border-left: 5px solid var(--accent-vibrant);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-card:hover, .approach-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(27, 67, 50, 0.1);
+}
+
+.service-card h3, .approach-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--foliha-mid);
+}
+
+.pricing-note {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: 0.75rem;
+}
+
+/* --- 6. Gallery Page Grid & Cards --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.gallery-item {
+    background-color: var(--card-bg);
+    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(27, 67, 50, 0.12);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 3px solid var(--accent-vibrant);
+}
+
+.gallery-item figcaption {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.gallery-item figcaption strong {
+    color: var(--foliha-mid);
+    font-size: 1.1rem;
+}
+
+.gallery-item figcaption span {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* --- 7. Tables (Pricing Guide) --- */
+.table-container {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+.pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.pricing-table th, .pricing-table td {
+    padding: 0.85rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.pricing-table th {
+    background-color: var(--foliha-mid);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.pricing-table tr:last-child td {
+    border-bottom: none;
+}
+
+.pricing-table tr:hover td {
+    background-color: #f4f9f4;
+}
+
+.formula-box {
+    background-color: var(--card-bg);
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px dashed var(--accent-vibrant);
+    margin: 1rem 0;
+    display: inline-block;
+    color: var(--canopy-dark);
+}
+
+/* --- 8. Forms, Fieldsets & Inputs --- */
+fieldset {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    background-color: var(--card-bg);
+}
+
+legend {
+    font-weight: 600;
+    color: var(--foliha-mid);
+    padding: 0 0.5rem;
+    background-color: var(--card-bg);
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+label {
+    font-weight: 500;
+    color: var(--text-main);
+    font-size: 0.95rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: #fbfdfb;
+    color: var(--text-main);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent-vibrant);
+    box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.15);
+}
+
+.submit-btn {
+    background-color: var(--accent-vibrant);
+    color: #ffffff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.submit-btn:hover {
+    background-color: var(--foliha-mid);
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+.form-notice {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+/* --- 9. Values List (Pills) --- */
+.values-section ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.values-section li {
+    background-color: #ffffff;
+    color: var(--foliha-mid);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+}
+
+/* --- 10. Contact Details & Footer --- */
+address {
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+address a {
+    color: var(--accent-vibrant);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+address a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
